@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Admin — ELLE Bouskoura Black Friday</title>
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="theme-color" content="#050505">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<script src="/config.js"></script>
+<style>
+:root{
+  --magenta:#FF00B9;--magenta-doux:rgba(255,0,185,.16);--rose:#DF547C;
+  --fond:#050505;--surface:#0d0b0d;--surface-2:#151015;--trait:rgba(255,255,255,.1);
+  --texte:#FFFFFF;--texte-2:rgba(255,255,255,.72);--texte-3:rgba(255,255,255,.5);
+  --ok:#3ddc84;--alerte:#ffb547;--erreur:#ff6b81;
+  --display:'Bebas Neue','Haettenschweiler',Impact,sans-serif;
+  --corps:'Jost','Avenir Next',Helvetica,Arial,sans-serif;
+  --expo:cubic-bezier(.16,1,.3,1);
+}
+*,*::before,*::after{box-sizing:border-box;}
+html{background:var(--fond);-webkit-text-size-adjust:100%;}
+body{margin:0;min-height:100svh;background:radial-gradient(circle at 90% 0,rgba(255,0,185,.09),transparent 34%),var(--fond);color:var(--texte);font-family:var(--corps);font-weight:300;font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;}
+button,input,select,textarea{font:inherit;color:inherit;}
+a{color:inherit;}
+:focus-visible{outline:2px solid var(--magenta);outline-offset:3px;}
+[hidden]{display:none!important;}
+.wrap{max-width:1240px;margin:0 auto;padding:0 clamp(16px,3vw,32px);}
+
+/* ---------- Boutons / champs ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:40px;padding:10px 18px 8px;border-radius:999px;border:1px solid var(--magenta);background:var(--magenta);color:#fff;font-family:var(--display);letter-spacing:.14em;font-size:14px;cursor:pointer;transition:background .3s,color .3s,border-color .3s;white-space:nowrap;}
+.btn:hover{background:#fff;color:#080808;border-color:#fff;}
+.btn--vide{background:transparent;border-color:var(--trait);color:var(--texte-2);}
+.btn--vide:hover{border-color:var(--magenta);color:#fff;background:transparent;}
+.btn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+.btn[disabled]{opacity:.55;cursor:wait;}
+.champ{width:100%;min-height:44px;padding:10px 14px;background:#080808;border:1px solid rgba(255,255,255,.16);border-radius:0;font-size:15px;color:#fff;appearance:none;-webkit-appearance:none;}
+.champ:focus{outline:none;border-color:var(--magenta);box-shadow:0 0 0 3px rgba(255,0,185,.15);}
+select.champ{padding-right:36px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23FF00B9' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 13px center;}
+
+/* ---------- Connexion ---------- */
+.login{min-height:100svh;display:grid;place-items:center;padding:24px;}
+.login__carte{width:100%;max-width:400px;padding:38px 32px;background:linear-gradient(180deg,#141014,#0d0b0d);border:1px solid rgba(255,0,185,.26);box-shadow:0 50px 110px -54px rgba(0,0,0,.95),0 0 60px -46px rgba(255,0,185,.7);text-align:center;}
+.login__carte img{height:40px;width:auto;margin:0 auto 22px;display:block;}
+.login h1{margin:0 0 6px;font-family:var(--display);font-weight:400;letter-spacing:.08em;font-size:28px;}
+.login p{margin:0 0 24px;color:var(--texte-3);font-size:14px;}
+.login form{display:grid;gap:12px;text-align:left;}
+.login label{font-family:var(--display);letter-spacing:.18em;font-size:12.5px;}
+.login .btn{width:100%;min-height:48px;font-size:16px;margin-top:4px;}
+.login__err{min-height:20px;margin:4px 0 0;color:var(--erreur);font-size:13.5px;text-align:center;}
+.login__info{margin-top:22px;padding:14px;border:1px dashed rgba(255,181,71,.4);color:var(--alerte);font-size:13px;text-align:left;}
+.login__info button{margin-top:10px;}
+
+/* ---------- En-tête ---------- */
+.tete{position:sticky;top:0;z-index:20;background:rgba(5,5,5,.9);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,0,185,.16);}
+.tete__in{display:flex;align-items:center;gap:16px;min-height:64px;flex-wrap:wrap;padding-block:10px;}
+.tete img{height:28px;width:auto;}
+.tete__titre{font-family:var(--display);letter-spacing:.2em;font-size:14px;color:var(--magenta);}
+.tete__esp{flex:1;}
+.tete__maj{font-size:12.5px;color:var(--texte-3);}
+.demo{display:inline-block;padding:3px 10px 2px;border:1px solid var(--alerte);color:var(--alerte);font-family:var(--display);letter-spacing:.16em;font-size:12px;border-radius:999px;}
+
+.onglets{display:flex;gap:6px;margin:24px 0 18px;border-bottom:1px solid var(--trait);}
+.onglet{background:none;border:0;border-bottom:2px solid transparent;padding:10px 14px 9px;font-family:var(--display);letter-spacing:.16em;font-size:16px;color:var(--texte-3);cursor:pointer;margin-bottom:-1px;}
+.onglet[aria-selected="true"]{color:#fff;border-bottom-color:var(--magenta);}
+.onglet .pastille{display:inline-block;min-width:22px;margin-left:6px;padding:1px 7px 0;border-radius:999px;background:var(--magenta-doux);color:var(--magenta);font-size:13px;letter-spacing:.04em;}
+
+.filtres{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:20px;}
+.seg{display:inline-flex;border:1px solid var(--trait);border-radius:999px;padding:3px;}
+.seg button{background:none;border:0;border-radius:999px;padding:7px 14px 5px;font-family:var(--display);letter-spacing:.14em;font-size:13.5px;color:var(--texte-3);cursor:pointer;}
+.seg button[aria-pressed="true"]{background:var(--magenta);color:#fff;}
+
+/* ---------- Tuiles KPI ---------- */
+.kpis{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-bottom:16px;}
+.kpi{padding:18px 18px 16px;background:var(--surface);border:1px solid var(--trait);}
+.kpi__lib{margin:0;font-family:var(--display);letter-spacing:.18em;font-size:12.5px;color:var(--texte-3);}
+.kpi__val{margin:6px 0 0;font-family:var(--display);font-weight:400;font-size:40px;line-height:1;color:#fff;font-variant-numeric:tabular-nums;}
+.kpi__sous{margin:6px 0 0;font-size:12.5px;color:var(--texte-3);}
+.kpi--fort{border-color:rgba(255,0,185,.45);background:linear-gradient(160deg,#1a0613,#0d0b0d);}
+.kpi--fort .kpi__val{color:var(--magenta);}
+@media(max-width:1100px){.kpis{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:560px){.kpis{grid-template-columns:repeat(2,1fr);}.kpi__val{font-size:34px;}}
+
+/* ---------- Cartes graphiques ---------- */
+.grille{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+.grille--3{grid-template-columns:repeat(3,1fr);}
+@media(max-width:980px){.grille,.grille--3{grid-template-columns:1fr;}}
+.carte{padding:20px 20px 16px;background:var(--surface);border:1px solid var(--trait);min-width:0;margin-bottom:12px;}
+.carte h2{margin:0 0 2px;font-family:var(--display);font-weight:400;letter-spacing:.14em;font-size:17px;}
+.carte__sous{margin:0 0 14px;font-size:12.5px;color:var(--texte-3);}
+.graph{position:relative;}
+.graph svg{display:block;width:100%;height:auto;overflow:visible;}
+.graph .axe{font-family:var(--corps);font-size:11px;fill:var(--texte-3);}
+.graph .grillage{stroke:rgba(255,255,255,.07);stroke-width:1;}
+.graph .base{stroke:rgba(255,255,255,.22);stroke-width:1;}
+.graph .barre{fill:var(--magenta);transition:opacity .2s;pointer-events:none;}
+.graph .zone:hover + .barre,.graph .barre.actif{opacity:.75;}
+.graph .zone{fill:transparent;cursor:crosshair;}
+.vide{padding:28px 0;text-align:center;color:var(--texte-3);font-size:14px;}
+.bulle{position:fixed;z-index:50;pointer-events:none;padding:8px 11px 7px;background:#1c161c;border:1px solid rgba(255,0,185,.35);box-shadow:0 12px 30px -12px rgba(0,0,0,.9);font-size:12.5px;line-height:1.4;white-space:nowrap;transform:translate(-50%,calc(-100% - 10px));}
+.bulle b{display:block;font-family:var(--display);letter-spacing:.12em;font-weight:400;font-size:13px;color:var(--texte-2);}
+.bulle span{font-size:15px;color:#fff;font-weight:500;}
+
+/* Barres horizontales (tunnel, sources, statuts) */
+.hbar{display:grid;gap:10px;}
+.hbar__ligne{display:grid;grid-template-columns:minmax(110px,34%) 1fr auto;gap:12px;align-items:center;font-size:13.5px;}
+.hbar__lib{color:var(--texte-2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.hbar__piste{display:block;height:12px;background:rgba(255,255,255,.05);border-radius:0 4px 4px 0;overflow:hidden;}
+.hbar__val{display:block;height:100%;background:var(--magenta);border-radius:0 4px 4px 0;min-width:2px;transition:width .8s var(--expo);}
+.hbar__nb{font-variant-numeric:tabular-nums;color:#fff;min-width:64px;text-align:right;}
+.hbar__nb small{color:var(--texte-3);margin-left:6px;}
+
+/* ---------- Leads ---------- */
+.outils{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:14px;}
+.outils .champ{width:auto;flex:1 1 220px;}
+.outils select.champ{flex:0 1 190px;}
+.table-wrap{overflow-x:auto;border:1px solid var(--trait);background:var(--surface);}
+table{width:100%;border-collapse:collapse;font-size:14px;}
+th{position:sticky;top:0;text-align:left;font-family:var(--display);font-weight:400;letter-spacing:.16em;font-size:12.5px;color:var(--texte-3);padding:12px 14px 10px;background:var(--surface-2);border-bottom:1px solid var(--trait);white-space:nowrap;}
+td{padding:11px 14px;border-bottom:1px solid rgba(255,255,255,.06);vertical-align:middle;}
+tr:hover td{background:rgba(255,0,185,.035);}
+.t-date{white-space:nowrap;color:var(--texte-2);font-variant-numeric:tabular-nums;}
+.t-nom{font-weight:400;}
+.t-tel{white-space:nowrap;font-variant-numeric:tabular-nums;}
+.t-tel a{display:inline-flex;align-items:center;gap:6px;text-decoration:none;color:#fff;}
+.t-tel a svg{width:16px;height:16px;fill:#25D366;}
+.t-src{color:var(--texte-2);font-size:13px;}
+.badge{display:inline-block;margin-left:6px;padding:1px 7px 0;border-radius:999px;font-family:var(--display);letter-spacing:.12em;font-size:11px;border:1px solid var(--alerte);color:var(--alerte);vertical-align:middle;}
+.statut{min-height:36px;padding:6px 32px 5px 10px;font-size:13.5px;background-position:right 10px center;}
+.statut[data-v="Nouveau"]{border-color:rgba(255,0,185,.6);}
+.statut[data-v="Inscrit"]{border-color:rgba(61,220,132,.6);}
+.statut[data-v="Pas intéressé"],.statut[data-v="Injoignable"]{border-color:rgba(255,255,255,.12);color:var(--texte-3);}
+.note{min-height:36px;padding:7px 10px;font-size:13.5px;min-width:160px;}
+.enreg{font-size:12px;color:var(--ok);margin-left:6px;opacity:0;transition:opacity .3s;}
+.enreg.on{opacity:1;}
+.compteur{margin:12px 2px 0;font-size:13px;color:var(--texte-3);}
+
+@media(max-width:760px){
+  thead{display:none;}
+  table,tbody,tr,td{display:block;width:100%;}
+  tr{padding:14px 14px 10px;border-bottom:1px solid var(--trait);}
+  td{border:0;padding:4px 0;}
+  td[data-l]::before{content:attr(data-l);display:block;font-family:var(--display);letter-spacing:.16em;font-size:11px;color:var(--texte-3);}
+  .t-nom{font-size:16px;}
+  .note{width:100%;}
+}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);opacity:0;z-index:60;padding:12px 18px 10px;background:#1c161c;border:1px solid rgba(255,0,185,.4);font-size:14px;transition:all .35s var(--expo);}
+.toast.on{opacity:1;transform:translate(-50%,0);}
+.toast.err{border-color:var(--erreur);color:#ffc2cc;}
+.pied-admin{padding:30px 0 40px;color:var(--texte-3);font-size:12px;text-align:center;}
+</style>
+</head>
+<body>
+
+<!-- ================= CONNEXION ================= -->
+<section class="login" id="vue-login">
+  <div class="login__carte">
+    <img src="/img/logo-elle.png" alt="ELLE Bouskoura" width="320" height="143">
+    <h1>Espace admin</h1>
+    <p>Black Friday 2026 · Statistiques &amp; leads</p>
+    <form id="form-login" autocomplete="on">
+      <label for="mdp">Mot de passe</label>
+      <input class="champ" type="password" id="mdp" name="password" autocomplete="current-password" required>
+      <button class="btn" type="submit" id="btn-login">Se connecter</button>
+      <p class="login__err" id="login-err" role="alert"></p>
+    </form>
+    <div class="login__info" id="login-info" hidden>
+      Le formulaire n'est pas encore branché à Google Sheet (URL Apps Script vide dans <code>config.js</code>).
+      <br><button class="btn btn--vide" type="button" id="btn-demo">Voir l'admin avec des données de démo</button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= APP ================= -->
+<div id="vue-app" hidden>
+  <header class="tete">
+    <div class="wrap tete__in">
+      <img src="/img/logo-elle.png" alt="ELLE Bouskoura" width="320" height="143">
+      <span class="tete__titre">Admin · Black Friday</span>
+      <span class="demo" id="tag-demo" hidden>Démo</span>
+      <span class="tete__esp"></span>
+      <span class="tete__maj" id="maj"></span>
+      <button class="btn btn--vide" type="button" id="btn-refresh"><svg viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 0-2.3 5.7M20 5v6h-6"/></svg>Actualiser</button>
+      <button class="btn btn--vide" type="button" id="btn-logout">Quitter</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="onglets" role="tablist">
+      <button class="onglet" role="tab" id="tab-stats" aria-selected="true" aria-controls="panneau-stats">Statistiques</button>
+      <button class="onglet" role="tab" id="tab-leads" aria-selected="false" aria-controls="panneau-leads">Leads <span class="pastille" id="nb-leads">0</span></button>
+    </div>
+
+    <!-- ===== STATISTIQUES ===== -->
+    <section id="panneau-stats" role="tabpanel" aria-labelledby="tab-stats">
+      <div class="filtres">
+        <div class="seg" id="periode" role="group" aria-label="Période">
+          <button type="button" data-p="1" aria-pressed="false">Aujourd'hui</button>
+          <button type="button" data-p="7" aria-pressed="false">7 jours</button>
+          <button type="button" data-p="30" aria-pressed="false">30 jours</button>
+          <button type="button" data-p="0" aria-pressed="true">Toute la campagne</button>
+        </div>
+      </div>
+
+      <div class="kpis" id="kpis"></div>
+
+      <div class="grille">
+        <article class="carte"><h2>Leads par jour</h2><p class="carte__sous">Demandes reçues via le formulaire</p><div class="graph" id="g-leads"></div></article>
+        <article class="carte"><h2>Visiteurs par jour</h2><p class="carte__sous">Visiteurs uniques de la landing</p><div class="graph" id="g-visites"></div></article>
+      </div>
+
+      <article class="carte"><h2>Tunnel de conversion</h2><p class="carte__sous">De la visite à la confirmation WhatsApp — % par rapport aux visiteurs</p><div class="hbar" id="g-tunnel"></div></article>
+
+      <div class="grille grille--3">
+        <article class="carte"><h2>Leads par source</h2><p class="carte__sous">utm_source (direct = sans UTM)</p><div class="hbar" id="g-sources"></div></article>
+        <article class="carte"><h2>Leads par statut</h2><p class="carte__sous">Suivi commercial</p><div class="hbar" id="g-statuts"></div></article>
+        <article class="carte"><h2>Clics par bouton</h2><p class="carte__sous">Quel CTA déclenche le plus</p><div class="hbar" id="g-ctas"></div></article>
+      </div>
+    </section>
+
+    <!-- ===== LEADS ===== -->
+    <section id="panneau-leads" role="tabpanel" aria-labelledby="tab-leads" hidden>
+      <div class="outils">
+        <input class="champ" type="search" id="recherche" placeholder="Rechercher un nom ou un numéro…" aria-label="Rechercher">
+        <select class="champ" id="f-statut" aria-label="Filtrer par statut"><option value="">Tous les statuts</option></select>
+        <select class="champ" id="f-source" aria-label="Filtrer par source"><option value="">Toutes les sources</option></select>
+        <button class="btn" type="button" id="btn-csv"><svg viewBox="0 0 24 24"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Export CSV</button>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Date</th><th>Nom</th><th>Téléphone</th><th>Source</th><th>Statut</th><th>Note</th></tr></thead>
+          <tbody id="t-leads"></tbody>
+        </table>
+      </div>
+      <p class="compteur" id="compteur"></p>
+    </section>
+  </main>
+  <p class="pied-admin">ELLE Bouskoura · Black Friday 2026 · Données : Google Sheet</p>
+</div>
+
+<div class="bulle" id="bulle" hidden></div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+(function(){
+  "use strict";
+  var C=window.ELLE_CONFIG||{};
+  var API=C.appsScriptUrl||'';
+  var apiOk=/^https:\/\/script\.google\.com\//.test(API);
+  var CLE_MDP='elle_admin_pw';
+  var etat={data:null,periode:0,demo:false,mdp:''};
+  var $=function(id){return document.getElementById(id);};
+  var esc=function(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});};
+  var nf=new Intl.NumberFormat('fr-FR');
+
+  function toast(msg,err){var t=$('toast');t.textContent=msg;t.className='toast on'+(err?' err':'');clearTimeout(t._t);t._t=setTimeout(function(){t.className='toast';},2600);}
+
+  function api(corps){
+    return fetch(API,{method:'POST',body:JSON.stringify(corps),redirect:'follow'})
+      .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.json();});
+  }
+
+  /* ---------------- Connexion ---------------- */
+  if(!apiOk) $('login-info').hidden=false;
+  try{ etat.mdp=sessionStorage.getItem(CLE_MDP)||''; }catch(e){}
+
+  $('form-login').addEventListener('submit',function(ev){
+    ev.preventDefault();
+    var mdp=$('mdp').value.trim(); if(!mdp) return;
+    if(!apiOk){ $('login-err').textContent="Apps Script non configuré dans config.js."; return; }
+    $('btn-login').disabled=true; $('login-err').textContent='';
+    charger(mdp).then(function(ok){
+      $('btn-login').disabled=false;
+      if(ok){ try{sessionStorage.setItem(CLE_MDP,mdp);}catch(e){} }
+    });
+  });
+  $('btn-demo').addEventListener('click',function(){ etat.demo=true; etat.data=demo(); afficherApp(); });
+  $('btn-logout').addEventListener('click',function(){ try{sessionStorage.removeItem(CLE_MDP);}catch(e){} location.reload(); });
+  $('btn-refresh').addEventListener('click',function(){ if(etat.demo){ toast('Mode démo'); return; } var b=this; b.disabled=true; charger(etat.mdp).then(function(){b.disabled=false;}); });
+
+  function charger(mdp){
+    return api({action:'admin',password:mdp}).then(function(d){
+      if(!d.ok){ $('login-err').textContent=d.error||'Accès refusé'; if(!$('vue-app').hidden){toast(d.error||'Session expirée',true);} return false; }
+      etat.mdp=mdp; etat.data=d; afficherApp(); return true;
+    }).catch(function(){
+      var m="Impossible de joindre Google Sheet. Vérifie l'URL Apps Script et le déploiement.";
+      $('login-err').textContent=m; if(!$('vue-app').hidden) toast(m,true); return false;
+    });
+  }
+  if(etat.mdp && apiOk){ charger(etat.mdp); }
+
+  function afficherApp(){
+    $('vue-login').hidden=true; $('vue-app').hidden=false; $('tag-demo').hidden=!etat.demo;
+    var g=new Date(etat.data.genere||Date.now());
+    $('maj').textContent='Mis à jour à '+g.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'});
+    remplirFiltres(); rendreStats(); rendreLeads();
+  }
+
+  /* ---------------- Onglets ---------------- */
+  function onglet(n){
+    ['stats','leads'].forEach(function(k){ $('tab-'+k).setAttribute('aria-selected',k===n?'true':'false'); $('panneau-'+k).hidden=k!==n; });
+    try{ localStorage.setItem('elle_admin_tab',n); }catch(e){}
+  }
+  $('tab-stats').addEventListener('click',function(){onglet('stats');});
+  $('tab-leads').addEventListener('click',function(){onglet('leads');});
+  try{ if(localStorage.getItem('elle_admin_tab')==='leads') onglet('leads'); }catch(e){}
+
+  /* ---------------- Période ---------------- */
+  Array.prototype.forEach.call($('periode').querySelectorAll('button'),function(b){
+    b.addEventListener('click',function(){
+      etat.periode=+b.getAttribute('data-p');
+      Array.prototype.forEach.call($('periode').querySelectorAll('button'),function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});
+      rendreStats();
+    });
+  });
+  function jourISO(d){ return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
+  function debutPeriode(){ if(!etat.periode) return ''; var d=new Date(); d.setDate(d.getDate()-(etat.periode-1)); return jourISO(d); }
+  function dansPeriode(jour){ var deb=debutPeriode(); return !deb || jour>=deb; }
+
+  /* ---------------- Statistiques ---------------- */
+  function rendreStats(){
+    var d=etat.data, deb=debutPeriode();
+    var jours=(d.parJour||[]).filter(function(j){return dansPeriode(j.jour);});
+    var leads=(d.leads||[]).filter(function(l){return dansPeriode(String(l.date).slice(0,10));});
+    var s={vis:0,vues:0,cta:0,form:0,leads:leads.length,wa:0};
+    jours.forEach(function(j){s.vis+=j.visiteurs;s.vues+=j.vues;s.cta+=j.cta;s.form+=j.form;s.wa+=j.whatsapp;});
+    if(!deb && d.visiteursUniques) s.vis=d.visiteursUniques;
+    var taux=s.vis?(s.leads/s.vis*100):0;
+    var inscrits=leads.filter(function(l){return l.statut==='Inscrit';}).length;
+
+    $('kpis').innerHTML=[
+      tuile('Visiteurs',nf.format(s.vis),nf.format(s.vues)+' pages vues'),
+      tuile('Clics CTA',nf.format(s.cta),s.vis?pct(s.cta/s.vis)+' des visiteurs':'—'),
+      tuile('Formulaires commencés',nf.format(s.form),s.vis?pct(s.form/s.vis)+' des visiteurs':'—'),
+      tuile('Leads',nf.format(s.leads),s.form?pct(s.leads/s.form)+' des formulaires':'—',true),
+      tuile('Taux de conversion',taux.toFixed(1).replace('.',',')+' %','leads ÷ visiteurs'),
+      tuile('Inscrites',nf.format(inscrits),s.leads?pct(inscrits/s.leads)+' des leads':'—')
+    ].join('');
+
+    var serie=serieJours(jours,leads);
+    barres($('g-leads'),serie.map(function(x){return{x:x.jour,y:x.leads};}),'lead','leads');
+    barres($('g-visites'),serie.map(function(x){return{x:x.jour,y:x.visiteurs};}),'visiteur','visiteurs');
+
+    hbarres($('g-tunnel'),[
+      {l:'Visiteurs',v:s.vis},{l:'Clics sur un CTA',v:s.cta},{l:'Formulaires commencés',v:s.form},{l:'Leads envoyés',v:s.leads},{l:'Clics WhatsApp',v:s.wa}
+    ],s.vis);
+
+    var src={}; leads.forEach(function(l){var k=l.utm_source||'direct';src[k]=(src[k]||0)+1;});
+    hbarres($('g-sources'),trier(src),leads.length);
+    var st={}; (d.statuts||[]).forEach(function(k){st[k]=0;}); leads.forEach(function(l){st[l.statut]=(st[l.statut]||0)+1;});
+    hbarres($('g-statuts'),Object.keys(st).map(function(k){return{l:k,v:st[k]};}),leads.length);
+    var NOMS={hero:'Bouton principal (haut)',nav:'Bouton menu',offre:'Carte prix',final:'Bloc final',sticky:'Bouton collant mobile'};
+    var c=d.ctas||{}; var tc=0; Object.keys(c).forEach(function(k){tc+=c[k];});
+    hbarres($('g-ctas'),trier(c).map(function(x){return{l:NOMS[x.l]||x.l,v:x.v};}),tc);
+  }
+  function tuile(lib,val,sous,fort){ return '<div class="kpi'+(fort?' kpi--fort':'')+'"><p class="kpi__lib">'+esc(lib)+'</p><p class="kpi__val">'+esc(val)+'</p><p class="kpi__sous">'+esc(sous)+'</p></div>'; }
+  function pct(x){ return Math.round(x*100)+' %'; }
+  function trier(o){ return Object.keys(o).map(function(k){return{l:k,v:o[k]};}).sort(function(a,b){return b.v-a.v;}); }
+
+  /* Série continue jour par jour (jours vides = 0) */
+  function serieJours(jours,leads){
+    var m={}; jours.forEach(function(j){m[j.jour]={visiteurs:j.visiteurs,leads:0};});
+    leads.forEach(function(l){var k=String(l.date).slice(0,10); (m[k]||(m[k]={visiteurs:0,leads:0})).leads++;});
+    var cles=Object.keys(m).sort(); if(!cles.length) return [];
+    var deb=debutPeriode()||cles[0], fin=jourISO(new Date()); if(cles[cles.length-1]>fin) fin=cles[cles.length-1];
+    var out=[], d=new Date(deb+'T12:00:00'), f=new Date(fin+'T12:00:00');
+    while(d<=f && out.length<400){ var k=jourISO(d); out.push({jour:k,visiteurs:(m[k]||{}).visiteurs||0,leads:(m[k]||{}).leads||0}); d.setDate(d.getDate()+1); }
+    return out;
+  }
+
+  /* Histogramme vertical SVG — une série, une couleur, survol = bulle */
+  function barres(el,pts,unite,unites){
+    if(!pts.length || !pts.some(function(p){return p.y>0;})){ el.innerHTML='<p class="vide">Pas encore de données sur cette période.</p>'; return; }
+    var W=560,H=200,g=34,b=24,h=10,max=Math.max.apply(null,pts.map(function(p){return p.y;}));
+    var pas=niceMax(max), n=pts.length, lw=(W-g)/n, bw=Math.max(2,Math.min(28,lw-2));
+    var s='<svg viewBox="0 0 '+W+' '+(H+b)+'" role="img" aria-label="'+esc(unites)+' par jour">';
+    for(var i=0;i<=3;i++){ var v=pas*i/3, y=H-(v/pas)*(H-h); s+='<line class="'+(i?'grillage':'base')+'" x1="'+g+'" x2="'+W+'" y1="'+y+'" y2="'+y+'"/><text class="axe" x="'+(g-8)+'" y="'+(y+4)+'" text-anchor="end">'+nf.format(Math.round(v))+'</text>'; }
+    var tous=Math.ceil(n/7);
+    pts.forEach(function(p,i){
+      var x=g+i*lw+(lw-bw)/2, hh=p.y?Math.max(3,(p.y/pas)*(H-h)):0, y=H-hh;
+      var lib=libJour(p.x), txt=nf.format(p.y)+' '+(p.y>1?unites:unite);
+      s+='<rect class="zone" x="'+(g+i*lw)+'" y="0" width="'+lw+'" height="'+H+'" data-l="'+esc(lib)+'" data-v="'+esc(txt)+'"/>';
+      if(hh) s+='<path class="barre" d="'+barreArrondie(x,y,bw,hh,Math.min(4,bw/2))+'"/>';
+      if(i%tous===0||i===n-1&&n<=7) s+='<text class="axe" x="'+(x+bw/2)+'" y="'+(H+16)+'" text-anchor="middle">'+esc(libCourt(p.x))+'</text>';
+    });
+    s+='</svg>'; el.innerHTML=s;
+    Array.prototype.forEach.call(el.querySelectorAll('.zone'),function(z){
+      z.addEventListener('mouseenter',function(){ var bl=z.nextElementSibling; if(bl&&bl.classList.contains('barre'))bl.classList.add('actif'); bulle(z,z.getAttribute('data-l'),z.getAttribute('data-v')); });
+      z.addEventListener('mouseleave',function(){ var bl=z.nextElementSibling; if(bl&&bl.classList.contains('barre'))bl.classList.remove('actif'); $('bulle').hidden=true; });
+    });
+  }
+  function barreArrondie(x,y,w,h,r){ r=Math.min(r,h); return 'M'+x+','+(y+h)+'V'+(y+r)+'Q'+x+','+y+' '+(x+r)+','+y+'H'+(x+w-r)+'Q'+(x+w)+','+y+' '+(x+w)+','+(y+r)+'V'+(y+h)+'Z'; }
+  function niceMax(m){ if(m<=3) return 3; var p=Math.pow(10,Math.floor(Math.log10(m))), f=m/p; var nice=f<=1.5?1.5:f<=3?3:f<=6?6:10; return Math.ceil(nice*p/3)*3; }
+  var MOIS=['janv.','févr.','mars','avr.','mai','juin','juil.','août','sept.','oct.','nov.','déc.'];
+  function libJour(k){ var d=new Date(k+'T12:00:00'); return d.toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long'}); }
+  function libCourt(k){ var d=new Date(k+'T12:00:00'); return d.getDate()+' '+MOIS[d.getMonth()]; }
+  function bulle(el,titre,val){ var r=el.getBoundingClientRect(), b=$('bulle'); b.innerHTML='<b>'+esc(titre)+'</b><span>'+esc(val)+'</span>'; b.hidden=false; b.style.left=(r.left+r.width/2)+'px'; b.style.top=(r.top+Math.max(8,r.height*0.15))+'px'; }
+
+  function hbarres(el,lignes,total){
+    lignes=lignes.filter(function(x){return x.v>0||x.l;});
+    var max=Math.max.apply(null,lignes.map(function(x){return x.v;}).concat([0]));
+    if(!max){ el.innerHTML='<p class="vide">Pas encore de données.</p>'; return; }
+    el.innerHTML=lignes.map(function(x){
+      var w=max?(x.v/max*100):0, p=total?Math.round(x.v/total*100)+' %':'';
+      return '<div class="hbar__ligne"><span class="hbar__lib" title="'+esc(x.l)+'">'+esc(x.l)+'</span><span class="hbar__piste"><span class="hbar__val" style="width:'+w.toFixed(1)+'%"></span></span><span class="hbar__nb">'+nf.format(x.v)+'<small>'+p+'</small></span></div>';
+    }).join('');
+  }
+
+  /* ---------------- Leads ---------------- */
+  var WA='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 14.96L2 22l5.2-1.5A9.9 9.9 0 1 0 12.04 2zm4.5 11.96c-.25-.12-1.46-.72-1.68-.8-.23-.09-.4-.13-.56.12-.17.25-.64.8-.79.97-.14.16-.29.18-.53.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.22-1.45-1.37-1.7-.14-.24-.01-.38.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.16 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.57.12.16 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.6.19 1.14.16 1.57.1.48-.07 1.46-.6 1.67-1.18.2-.58.2-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg>';
+
+  function remplirFiltres(){
+    var d=etat.data;
+    var fs=$('f-statut'), v1=fs.value; fs.innerHTML='<option value="">Tous les statuts</option>'+(d.statuts||[]).map(function(s){return '<option>'+esc(s)+'</option>';}).join(''); fs.value=v1;
+    var srcs={}; (d.leads||[]).forEach(function(l){srcs[l.utm_source||'direct']=1;});
+    var fo=$('f-source'), v2=fo.value; fo.innerHTML='<option value="">Toutes les sources</option>'+Object.keys(srcs).sort().map(function(s){return '<option>'+esc(s)+'</option>';}).join(''); fo.value=v2;
+    $('nb-leads').textContent=(d.leads||[]).length;
+  }
+  ['recherche','f-statut','f-source'].forEach(function(id){ $(id).addEventListener('input',rendreLeads); });
+
+  function leadsFiltres(){
+    var q=$('recherche').value.trim().toLowerCase(), qn=q.replace(/[\s.\-+]/g,''), st=$('f-statut').value, so=$('f-source').value;
+    return (etat.data.leads||[]).filter(function(l){
+      if(st&&l.statut!==st) return false;
+      if(so&&(l.utm_source||'direct')!==so) return false;
+      if(q){ var telN=String(l.tel).replace(/[\s.\-+]/g,''); if(String(l.nom).toLowerCase().indexOf(q)===-1 && (!qn||telN.indexOf(qn.replace(/^0/,''))===-1)) return false; }
+      return true;
+    });
+  }
+
+  function rendreLeads(){
+    var liste=leadsFiltres(), statuts=etat.data.statuts||[];
+    if(!liste.length){ $('t-leads').innerHTML='<tr><td colspan="6" class="vide">Aucun lead pour le moment.</td></tr>'; $('compteur').textContent=''; return; }
+    $('t-leads').innerHTML=liste.map(function(l){
+      var wa='https://wa.me/'+String(l.tel).replace(/\D/g,'')+'?text='+encodeURIComponent("Bonjour "+String(l.nom).split(' ')[0]+", c'est l'équipe ELLE Bouskoura 👋 Merci pour ta demande pour l'offre Duo Black Friday à 10 500 DH.");
+      var src=[l.utm_source||'direct',l.utm_campaign].filter(Boolean).join(' · ');
+      return '<tr data-id="'+esc(l.id)+'">'+
+        '<td class="t-date" data-l="Date">'+esc(l.date)+'</td>'+
+        '<td class="t-nom" data-l="Nom">'+esc(l.nom)+(l.doublon==='Oui'?'<span class="badge" title="Ce numéro a déjà envoyé une demande">Doublon</span>':'')+'</td>'+
+        '<td class="t-tel" data-l="Téléphone"><a href="'+esc(wa)+'" target="_blank" rel="noopener" title="Ouvrir WhatsApp">'+WA+esc(l.tel)+'</a></td>'+
+        '<td class="t-src" data-l="Source">'+esc(src)+'</td>'+
+        '<td data-l="Statut"><select class="champ statut" data-v="'+esc(l.statut)+'" aria-label="Statut">'+statuts.map(function(s){return '<option'+(s===l.statut?' selected':'')+'>'+esc(s)+'</option>';}).join('')+'</select><span class="enreg">✓</span></td>'+
+        '<td data-l="Note"><input class="champ note" type="text" maxlength="500" value="'+esc(l.note)+'" placeholder="Ajouter une note…" aria-label="Note"></td>'+
+      '</tr>';
+    }).join('');
+    var tot=(etat.data.leads||[]).length;
+    $('compteur').textContent=liste.length===tot?(tot+' lead'+(tot>1?'s':'')):(liste.length+' sur '+tot+' leads');
+  }
+
+  function majLead(tr,champs){
+    var id=tr.getAttribute('data-id'), l=(etat.data.leads||[]).filter(function(x){return x.id===id;})[0];
+    if(l) for(var k in champs) l[k]=champs[k];
+    var ok=function(){ var e=tr.querySelector('.enreg'); if(e){e.classList.add('on');setTimeout(function(){e.classList.remove('on');},1400);} };
+    if(etat.demo){ ok(); rendreStatsSilencieux(); return; }
+    var corps={action:'update',password:etat.mdp,id:id}; for(var k2 in champs) corps[k2==='statut'?'statut':'note']=champs[k2];
+    api(corps).then(function(d){ if(!d.ok) throw new Error(d.error); ok(); rendreStatsSilencieux(); }).catch(function(e){ toast("Non enregistré : "+(e.message||'erreur'),true); });
+  }
+  function rendreStatsSilencieux(){ try{rendreStats();}catch(e){} }
+
+  $('t-leads').addEventListener('change',function(ev){
+    var t=ev.target, tr=t.closest('tr'); if(!tr) return;
+    if(t.classList.contains('statut')){ t.setAttribute('data-v',t.value); majLead(tr,{statut:t.value}); }
+    else if(t.classList.contains('note')){ majLead(tr,{note:t.value}); }
+  });
+
+  $('btn-csv').addEventListener('click',function(){
+    var cols=['date','nom','tel','statut','doublon','note','offre','utm_source','utm_medium','utm_campaign','utm_content','utm_term','page'];
+    var ent=['Date','Nom','Téléphone','Statut','Doublon','Note','Offre','utm_source','utm_medium','utm_campaign','utm_content','utm_term','Page'];
+    var q=function(v){v=String(v==null?'':v);return /[";\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v;};
+    var lignes=[ent.join(';')].concat(leadsFiltres().map(function(l){return cols.map(function(c){return q(l[c]);}).join(';');}));
+    var blob=new Blob(['﻿'+lignes.join('\n')],{type:'text/csv;charset=utf-8'});
+    var a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='leads-elle-black-friday-'+jourISO(new Date())+'.csv'; document.body.appendChild(a); a.click(); a.remove();
+  });
+
+  /* ---------------- Données de démo ---------------- */
+  function demo(){
+    var prenoms=['Salma Bennani','Imane Alaoui','Sara El Idrissi','Kenza Tazi','Nadia Berrada','Yasmine Chraibi','Hiba Lahlou','Meryem Fassi','Ghita Benjelloun','Rim Sqalli','Lina Kettani','Aya Mansouri'];
+    var srcs=['facebook','facebook','instagram','instagram','instagram','tiktok','',''];
+    var statuts=['Nouveau','Contacté','Intéressé','Inscrit','Pas intéressé','Injoignable'];
+    var parJour=[], leads=[], n=0, base=new Date(); base.setDate(base.getDate()-13);
+    for(var i=0;i<14;i++){
+      var d=new Date(base); d.setDate(base.getDate()+i); var k=jourISO(d);
+      var v=60+Math.round(Math.random()*90+i*6), nl=Math.max(0,Math.round(v*0.045+Math.random()*3-1));
+      parJour.push({jour:k,vues:Math.round(v*1.3),visiteurs:v,cta:Math.round(v*0.32),form:Math.round(v*0.12),leads:nl,whatsapp:Math.round(nl*0.8)});
+      for(var j=0;j<nl;j++){ n++; leads.push({id:'D'+n,date:k+' '+String(9+Math.floor(Math.random()*12)).padStart(2,'0')+':'+String(Math.floor(Math.random()*60)).padStart(2,'0')+':00',nom:prenoms[n%prenoms.length],tel:'+2126'+String(10000000+Math.floor(Math.random()*89999999)),statut:i<10?statuts[Math.floor(Math.random()*statuts.length)]:'Nouveau',doublon:n%9===0?'Oui':'',note:'',utm_source:srcs[n%srcs.length],utm_campaign:srcs[n%srcs.length]?'bf-duo':''}); }
+    }
+    var vu=parJour.reduce(function(a,j){return a+j.visiteurs;},0);
+    leads.sort(function(a,b){return a.date<b.date?-1:1;});
+    return {ok:true,genere:new Date().toISOString(),statuts:statuts,leads:leads.reverse(),parJour:parJour,ctas:{hero:Math.round(vu*.14),sticky:Math.round(vu*.09),offre:Math.round(vu*.05),final:Math.round(vu*.03),nav:Math.round(vu*.02)},visiteursUniques:Math.round(vu*.86)};
+  }
+})();
+</script>
+</body>
+</html>

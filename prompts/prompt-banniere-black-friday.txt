@@ -1,0 +1,38 @@
+PROMPT CHATGPT — BANNIÈRE BLACK FRIDAY ELLE (CORRECTION)
+À utiliser avec, en pièce jointe, la bannière Black Friday déjà générée (celle avec -50 % / 2 mois offerts).
+Fichier final attendu : 1920 × 1080 px (16:9), à enregistrer sous  site/img/cover-black-friday.jpg
+
+-------------------------------------------------------------------------------
+
+Modifie l'image jointe. C'est la bannière Black Friday du club ELLE Bouskoura. Garde ABSOLUMENT TOUT à l'identique (ciel de nuit, façade « UNIQUE ELLE – YOUR FITNESS CLUB », drapeau « ELLE », reflets magenta, bandeau des 5 photos du bas et leurs légendes ÉQUIPEMENTS · COURS COLLECTIFS · PILATES · CYCLING · VESTIAIRES, surtitre « LE CLUB 100 % FEMMES À BOUSKOURA », titre « BLACK FRIDAY »). Modifie UNIQUEMENT le bloc de texte situé sous le titre, à gauche, comme suit :
+
+1. Deuxième ligne du titre (remplace « LES OFFRES DE L'ANNÉE ») :
+   « OFFRE DUO 10 500 DH »
+   → « OFFRE DUO » en blanc, « 10 500 DH » en magenta #FF00B9. Même police condensée en capitales, même taille, même alignement à gauche.
+
+2. Remplace les 3 avantages par ces 3 colonnes (mêmes icônes fines au trait magenta, mêmes séparateurs verticaux) :
+   - Colonne 1 — icône deux silhouettes féminines :  « Offre Duo »  (en magenta)  puis dessous  « pour 2 personnes »  (en blanc)
+   - Colonne 2 — icône étiquette de prix :  « 10 500 DH »  (en magenta)  puis dessous  « le duo »  (en blanc)
+   - Colonne 3 — icône carte cadeau (garder l'icône actuelle) :  « Cartes cadeaux partenaires »  puis  « valeur 1000 DH »  avec « 1000 DH » en magenta  (garder ce texte tel qu'il est déjà)
+
+3. Supprime totalement « -50 % sur l'abonnement » et « 2 mois offerts ». Il ne doit plus y avoir aucune mention de réduction en pourcentage, de mois offerts ou de séance offerte.
+
+4. Pastille avec l'horloge : garde exactement « Offre spéciale jusqu'au 30 novembre » (« 30 novembre » en magenta).
+
+FORMAT
+- Paysage 16:9, 1920 × 1080 px. Même cadrage, rien ne doit être recadré ni coupé.
+
+TEXTE — RÈGLES STRICTES
+- Recopie les textes EXACTEMENT : « OFFRE DUO », « 10 500 DH » (avec une espace entre 10 et 500), « pour 2 personnes », « le duo », « Cartes cadeaux partenaires », « valeur 1000 DH », « Offre spéciale jusqu'au 30 novembre ».
+- Aucun autre texte ajouté, aucun chiffre inventé, aucune lettre déformée, accents corrects.
+- Texte parfaitement net et lisible sur le fond noir.
+
+-------------------------------------------------------------------------------
+
+SI UN MOT RESSORT FAUX : relance avec
+« Corrige uniquement le texte "XXX" en "YYY". Ne modifie rien d'autre dans l'image. »
+
+APRÈS GÉNÉRATION :
+- Si l'image sort en 1536 × 1024 : recadrer en 16:9 puis redimensionner en 1920 × 1080.
+- Exporter en JPG qualité ~82, poids < 350 Ko.
+- Remplacer le fichier  site/img/cover-black-friday.jpg  (même nom, rien d'autre à toucher dans le code).

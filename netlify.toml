@@ -1,0 +1,52 @@
+# ELLE Bouskoura — Black Friday 2026
+# Site 100 % statique : pas de build, Netlify publie le dossier "site".
+[build]
+  publish = "site"
+  command = ""
+
+# Anciennes URL PHP → nouvelles pages (liens partagés, pubs, WhatsApp)
+[[redirects]]
+  from = "/index.php"
+  to = "/"
+  status = 301
+[[redirects]]
+  from = "/merci.php"
+  to = "/merci.html"
+  status = 301
+[[redirects]]
+  from = "/politique-de-confidentialite.php"
+  to = "/politique-de-confidentialite.html"
+  status = 301
+[[redirects]]
+  from = "/admin"
+  to = "/admin/"
+  status = 301
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"
+
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow, noarchive"
+    Cache-Control = "no-store"
+
+[[headers]]
+  for = "/merci.html"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
+# config.js : jamais en cache, pour qu'un changement d'URL Apps Script soit pris tout de suite
+[[headers]]
+  for = "/config.js"
+  [headers.values]
+    Cache-Control = "no-cache"
+
+[[headers]]
+  for = "/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
