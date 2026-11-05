@@ -15,6 +15,7 @@
    ============================================================================= */
 
 /* ------------------------------ RÉGLAGES ---------------------------------- */
+const SHEET_ID       = '1fymJL35t6xOYD3e1HINf2V8C2roq0eHsnQk2kr3-Nu0'; // Google Sheet ELLE
 const ADMIN_PASSWORD = 'ElleDuo-3699';      // mot de passe de l'espace /admin
 const NOTIFY_EMAIL   = '';                  // ex. 'contact@ellebouskoura.com' — vide = pas d'email
 const TIMEZONE       = 'Africa/Casablanca';
@@ -243,7 +244,7 @@ function updateLead_(b) {
 
 /* ------------------------------- OUTILS ----------------------------------- */
 function sheet_(name, headers) {
-  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const ss = ss_();
   let sh = ss.getSheetByName(name);
   if (!sh) {
     sh = ss.insertSheet(name);
@@ -253,6 +254,8 @@ function sheet_(name, headers) {
   }
   return sh;
 }
+
+function ss_() { return SHEET_ID ? SpreadsheetApp.openById(SHEET_ID) : SpreadsheetApp.getActiveSpreadsheet(); }
 
 function normaliserTel_(brut) {
   const n = String(brut || '').replace(/[\s.\-()]/g, '');
@@ -275,9 +278,10 @@ function installer() {
   const regle = SpreadsheetApp.newDataValidation().requireValueInList(STATUTS, true).setAllowInvalid(false).build();
   shL.getRange(2, 5, 2000, 1).setDataValidation(regle);      // menu déroulant Statut
   shL.setColumnWidth(1, 130); shL.setColumnWidth(2, 150); shL.setColumnWidth(3, 190); shL.setColumnWidth(4, 140);
-  const def = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('Feuille 1') || SpreadsheetApp.getActiveSpreadsheet().getSheetByName('Sheet1');
-  if (def && def.getLastRow() === 0 && SpreadsheetApp.getActiveSpreadsheet().getSheets().length > 2) SpreadsheetApp.getActiveSpreadsheet().deleteSheet(def);
-  SpreadsheetApp.getActiveSpreadsheet().toast('Onglets Leads et Evenements prêts ✔', 'ELLE Black Friday');
+  const def = ss_().getSheetByName('Feuille 1') || ss_().getSheetByName('Sheet1');
+  if (def && def.getLastRow() === 0 && ss_().getSheets().length > 2) ss_().deleteSheet(def);
+  try { ss_().toast('Onglets Leads et Evenements prêts ✔', 'ELLE Black Friday'); } catch (e) {}
+  console.log('Onglets Leads et Evenements prêts');
 }
 
 /* Test rapide depuis l'éditeur : ajoute un faux lead */

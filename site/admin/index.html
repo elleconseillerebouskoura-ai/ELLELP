@@ -352,7 +352,7 @@ tr:hover td{background:rgba(255,0,185,.035);}
     hbarres($('g-sources'),trier(src),leads.length);
     var st={}; (d.statuts||[]).forEach(function(k){st[k]=0;}); leads.forEach(function(l){st[l.statut]=(st[l.statut]||0)+1;});
     hbarres($('g-statuts'),Object.keys(st).map(function(k){return{l:k,v:st[k]};}),leads.length);
-    var NOMS={hero:'Bouton principal (haut)',nav:'Bouton menu',offre:'Carte prix',final:'Bloc final',sticky:'Bouton collant mobile'};
+    var NOMS={hero:'Bouton principal (haut)',nav:'Bouton menu',offre:'Carte prix',espaces:'Section club',final:'Bloc final',sticky:'Bouton collant mobile',tel_hero:'Appel (haut)',tel_reserver:'Appel (réservation)',tel_pied:'Appel (contact)'};
     var c=d.ctas||{}; var tc=0; Object.keys(c).forEach(function(k){tc+=c[k];});
     hbarres($('g-ctas'),trier(c).map(function(x){return{l:NOMS[x.l]||x.l,v:x.v};}),tc);
   }

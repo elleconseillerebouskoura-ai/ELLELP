@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>ELLE Bouskoura — Black Friday | Offre Duo 10 500 DH</title>
-<meta name="description" content="Black Friday chez ELLE Bouskoura, le club premium 100 % femmes : offre Duo à 10 500 DH pour 2 personnes + cartes cadeaux partenaires d'une valeur de 1 000 DH. Offre valable jusqu'au 30 novembre.">
+<title>ELLE Bouskoura — Black Friday Novembre | Offre Duo 2 personnes à 10 500 DH</title>
+<meta name="description" content="Offre Duo Black Friday chez ELLE Bouskoura : 2 personnes à 10 500 DH. Club 100 % femmes de 3 000 m², centre commercial Bo Village, ouvert 7j/7. Places limitées.">
 <link rel="canonical" href="https://ellebouskoura.com/">
 <meta name="theme-color" content="#050505">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -14,16 +14,16 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ELLE Bouskoura">
 <meta property="og:url" content="https://ellebouskoura.com/">
-<meta property="og:title" content="Black Friday ELLE Bouskoura — Offre Duo 10 500 DH">
-<meta property="og:description" content="Le club premium 100 % femmes de Bouskoura : offre Duo à 10 500 DH + cartes cadeaux partenaires d'une valeur de 1 000 DH. Jusqu'au 30 novembre.">
+<meta property="og:title" content="Black Friday ELLE Bouskoura — 2 personnes à 10 500 DH">
+<meta property="og:description" content="Offre Duo Black Friday : 2 personnes à 10 500 DH. Club 100 % femmes · 3 000 m² · 7j/7 · Bo Village Bouskoura. Places limitées.">
 <meta property="og:image" content="https://ellebouskoura.com/img/og-black-friday.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="ELLE Bouskoura — Black Friday, offre Duo 10 500 DH">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Black Friday ELLE Bouskoura — Offre Duo 10 500 DH">
-<meta name="twitter:description" content="Offre Duo à 10 500 DH + cartes cadeaux partenaires d'une valeur de 1 000 DH. Jusqu'au 30 novembre.">
+<meta name="twitter:title" content="Black Friday ELLE Bouskoura — 2 personnes à 10 500 DH">
+<meta name="twitter:description" content="Offre Duo Black Friday : 2 personnes à 10 500 DH. Club 100 % femmes · 3 000 m² · 7j/7. Places limitées.">
 <meta name="twitter:image" content="https://ellebouskoura.com/img/og-black-friday.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -328,6 +328,49 @@ body.pret .trame{opacity:1;}
 .colle-cta .btn{width:100%;min-height:52px;font-size:16px;}
 @media(min-width:761px){.colle-cta{display:none;}}
 
+
+/* Hero titre Black Friday */
+.hero__titre{display:flex;flex-direction:column;align-items:center;}
+.hero__haut{font-size:clamp(26px,3.6vw,48px);letter-spacing:.08em;color:#fff;}
+.hero__mois{font-size:clamp(78px,15vw,200px);line-height:.82;color:var(--magenta);text-shadow:0 0 60px rgba(255,0,185,.35);}
+.hero__prix{font-size:clamp(30px,4.6vw,62px);letter-spacing:.04em;color:#fff;margin-top:.12em;}
+.hero__prix b{font-weight:400;color:var(--magenta);}
+.hero__cta-duo{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;}
+.btn--tel{--fond:transparent;--encre:#fff;--trait:rgba(255,255,255,.34);box-shadow:none;}
+.btn--tel svg{width:18px;height:18px;}
+
+/* Chiffres clés */
+.chiffres{background:#070707;border-top:1px solid rgba(255,0,185,.15);}
+.chiffres__liste{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);}
+.chiffres__liste li{padding:clamp(26px,3vw,40px) 18px;text-align:center;border-right:1px solid rgba(255,255,255,.08);}
+.chiffres__liste li:last-child{border-right:0;}
+.chiffres__liste b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(34px,4vw,54px);line-height:.95;color:#fff;letter-spacing:.02em;}
+.chiffres__liste b em{font-style:normal;color:var(--magenta);}
+.chiffres__liste b em.u{font-family:var(--texte);font-weight:300;font-size:.62em;letter-spacing:0;}
+.chiffres__liste span{display:block;margin-top:8px;font-family:var(--display);letter-spacing:.22em;font-size:12.5px;color:rgba(255,255,255,.6);text-transform:uppercase;}
+@media(max-width:760px){.chiffres__liste{grid-template-columns:1fr 1fr;}.chiffres__liste li{border-bottom:1px solid rgba(255,255,255,.08);}.chiffres__liste li:nth-child(2n){border-right:0;}.chiffres__liste li:nth-last-child(-n+2){border-bottom:0;}}
+
+/* Espaces & cours */
+.espaces{background:radial-gradient(circle at 86% 16%,rgba(255,0,185,.07),transparent 30%),#050505;}
+.espaces__tete{max-width:760px;margin-bottom:clamp(38px,5vw,60px);}
+.espaces__grille{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.espace{margin:0;background:#0d0b0d;border:1px solid rgba(255,255,255,.08);transition:border-color .6s var(--doux),transform .6s var(--expo);}
+.espace:hover{border-color:rgba(255,0,185,.5);transform:translateY(-3px);}
+.espace__img{position:relative;aspect-ratio:1/1;overflow:hidden;background:#050505;}
+.espace__img img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--doux);}
+.espace:hover .espace__img img{transform:scale(1.05);}
+.espace__img::after{content:"";position:absolute;inset:0;background:linear-gradient(200deg,rgba(255,0,185,.16),transparent 50%);mix-blend-mode:multiply;pointer-events:none;}
+.espace__num{position:absolute;top:14px;left:14px;z-index:1;font-family:var(--display);letter-spacing:.24em;font-size:13px;color:#fff;padding:6px 10px 4px;background:rgba(5,5,5,.7);border:1px solid rgba(255,0,185,.4);}
+.espace figcaption{padding:20px 20px 22px;}
+.espace h3{margin:0 0 6px;font-family:var(--display);font-weight:400;letter-spacing:.1em;font-size:clamp(22px,2.1vw,27px);text-transform:uppercase;color:#fff;}
+.espace p{margin:0;font-size:14.5px;color:rgba(255,255,255,.64);line-height:1.6;}
+.espaces .preuve__grande{margin-bottom:16px;}
+.espaces__cta{margin-top:clamp(34px,4vw,50px);display:flex;justify-content:center;}
+@media(max-width:940px){.espaces__grille{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:600px){.espaces__grille{gap:10px;}.espace figcaption{padding:14px 14px 16px;}.espace h3{font-size:19px;}.espace p{font-size:13px;}.espace__num{top:10px;left:10px;font-size:11px;}}
+.reserver__actions{margin-top:30px;}
+.form-panneau .btn--xl{padding:22px 22px 18px;font-size:clamp(16px,1.7vw,21px);letter-spacing:.08em;}
+
 /* ===== Mobile (Instagram / TikTok in-app) ===== */
 @media(max-width:600px){
   :root{--gutter:18px;}
@@ -339,7 +382,7 @@ body.pret .trame{opacity:1;}
   .hero__lead{display:none;}
   .hero__cover{margin:14px -18px 24px;width:calc(100% + 36px);max-width:none;box-shadow:0 28px 70px -36px rgba(255,0,185,.58);}
   .hero__cta{margin-top:28px;gap:12px;}
-  .btn--xl{padding:20px 32px 17px;font-size:18px;letter-spacing:.1em;}
+  .btn--xl{padding:20px 20px 17px;font-size:17px;letter-spacing:.06em;}
   .hero__note{font-size:11px;}
   .urgence{font-size:11.5px;letter-spacing:.12em;padding:10px 18px 8px;}
   .decompte{gap:6px;}
@@ -381,14 +424,14 @@ body.pret .trame{opacity:1;}
 </head>
 <body>
 
-<div class="bandeau-haut" id="bandeau-haut">Black Friday — Offre Duo 10 500 DH —&nbsp;<b>jusqu'au 30 novembre</b></div>
+<div class="bandeau-haut" id="bandeau-haut">Offre Duo Black Friday — 2 personnes à 10 500 DH —&nbsp;<b>places limitées</b></div>
 <div class="grain" aria-hidden="true"></div>
 <div class="jauge" id="jauge" aria-hidden="true"></div>
 
 <header class="nav" id="nav">
   <div class="wrap nav__in">
     <a href="#haut" class="sceau" aria-label="ELLE Bouskoura — haut de page"><img src="/img/logo-elle.png" alt="ELLE Bouskoura" width="320" height="143"></a>
-    <a class="btn magnet" href="#reserver" data-cta="nav"><span class="btn__t">Je réserve</span></a>
+    <a class="btn magnet" href="#reserver" data-cta="nav"><span class="btn__t">Réserver</span></a>
   </div>
 </header>
 
@@ -398,29 +441,44 @@ body.pret .trame{opacity:1;}
 <section class="hero">
   <canvas class="trame" id="trame" aria-hidden="true"></canvas>
   <div class="wrap hero__in">
-    <p class="sur monte" style="--base:150ms">Black Friday · ELLE Bouskoura</p>
-    <h1 class="titre t-xl hero__titre">
-      <span class="ligne"><span style="--i:0;--base:250ms">Offre Duo</span></span>
-      <span class="ligne"><span class="mg" style="--i:1;--base:250ms">10 500 DH</span></span>
+    <p class="sur monte" style="--base:150ms">Club 100 % femmes · Bouskoura</p>
+    <h1 class="titre hero__titre">
+      <span class="ligne"><span class="hero__haut" style="--i:0;--base:250ms">Offre Duo Black Friday</span></span>
+      <span class="ligne"><span class="hero__mois" style="--i:1;--base:250ms">Novembre</span></span>
+      <span class="ligne"><span class="hero__prix" style="--i:2;--base:250ms">2 personnes à <b>10 500 DH</b></span></span>
     </h1>
     <p class="lead hero__lead monte" style="--base:620ms">
-      Pour Black Friday, viens t'entraîner à deux au club premium 100 % femmes de Bouskoura :
-      l'offre Duo à 10 500 DH pour 2 personnes, avec en plus des cartes cadeaux chez nos partenaires d'une valeur de 1 000 DH.
+      Le club premium 100 % femmes de Bouskoura : 3 000 m² au centre commercial Bo Village, ouvert 7j/7.
+      Pour Black Friday, viens à deux : l'offre Duo, c'est 2 personnes pour 10 500 DH.
     </p>
     <div class="hero__cover monte" style="--base:760ms">
-      <img src="/img/cover-black-friday.jpg" alt="ELLE Bouskoura — Black Friday : offre Duo 10 500 DH, cartes cadeaux partenaires valeur 1000 DH, jusqu'au 30 novembre" width="1672" height="941" fetchpriority="high" decoding="async"
+      <img src="/img/cover-black-friday.jpg" alt="ELLE Bouskoura — Offre Duo Black Friday novembre : 2 personnes à 10 500 DH. Plateau musculation, vestiaires, Les Mills, Kaada Oriental, Spinning RPM, Pilates Reformer." width="1671" height="941" fetchpriority="high" decoding="async"
         onerror="this.parentElement.classList.add('ph');this.remove();">
     </div>
     <div class="hero__cta monte" style="--base:900ms">
-      <p class="urgence" data-compte="pastille">Offre spéciale jusqu'au 30 novembre</p>
-      <a class="btn btn--xl magnet" href="#reserver" data-cta="hero">
-        <span class="btn__t">
-          Je réserve mon offre Duo
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </span>
-      </a>
-      <p class="hero__note">Offre valable jusqu'au 30 novembre 2026, dans la limite des places disponibles.</p>
+      <p class="urgence">Places limitées</p>
+      <div class="hero__cta-duo">
+        <a class="btn btn--xl magnet" href="#reserver" data-cta="hero">
+          <span class="btn__t">
+            Réservez vos places limitées
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </a>
+      </div>
+      <p class="hero__note">Ou appelle-nous : <a href="tel:+212709680532" data-tel="hero" style="color:#fff;text-decoration:underline;text-underline-offset:3px">07 09 68 05 32</a></p>
     </div>
+  </div>
+</section>
+
+<!-- ================= CHIFFRES CLÉS ================= -->
+<section class="chiffres" aria-label="Le club en chiffres">
+  <div class="wrap">
+    <ul class="chiffres__liste">
+      <li><b>100 <em>%</em></b><span>Club femmes</span></li>
+      <li><b>3 000 <em class="u">m²</em></b><span>de superficie</span></li>
+      <li><b>7<em>j</em>/7</b><span>ouvert tous les jours</span></li>
+      <li><b>Bo <em>Village</em></b><span>Centre commercial · Bouskoura</span></li>
+    </ul>
   </div>
 </section>
 
@@ -430,18 +488,22 @@ body.pret .trame{opacity:1;}
     <div class="bandeau__lot">
       <span class="mot"><svg viewBox="0 0 24 24"><path d="M12 3.5l2.5 5.4 5.8.8-4.2 4 1 5.8-5.1-2.9-5.1 2.9 1-5.8-4.2-4 5.8-.8z"/></svg>Black Friday</span>
       <span class="mot"><svg viewBox="0 0 24 24"><circle cx="8.5" cy="7" r="3"/><circle cx="15.5" cy="7" r="3"/><path d="M3 20c0-3.5 2.5-6 5.5-6s5.5 2.5 5.5 6M10 20c0-3.5 2.5-6 5.5-6S21 16.5 21 20"/></svg>Offre Duo</span>
-      <span class="mot"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.6-7-9.3A3.9 3.9 0 0 1 12 8a3.9 3.9 0 0 1 7 2.7C19 15.4 12 20 12 20z"/></svg>100 % femmes</span>
-      <span class="mot"><svg viewBox="0 0 24 24"><path d="M3 9v6M6 7v10M18 7v10M21 9v6M6 12h12"/></svg>Coaching</span>
-      <span class="mot"><svg viewBox="0 0 24 24"><circle cx="13.5" cy="4" r="2"/><path d="M11 21l2-7 4 3 2 4M13 14l-4-3 1-4 4 2 3 1"/></svg>Cours collectifs</span>
-      <span class="mot"><svg viewBox="0 0 24 24"><path d="M12 20c0-4 3-7 7-7 0 4-3 7-7 7zM12 20c0-4-3-7-7-7 0 4 3 7 7 7zM12 20c0-5 2-8 2-8s2 3 2 8"/></svg>Yoga &amp; bien-être</span>
+      <span class="mot"><svg viewBox="0 0 24 24"><path d="M3 9v6M6 7v10M18 7v10M21 9v6M6 12h12"/></svg>Plateau musculation</span>
+      <span class="mot"><svg viewBox="0 0 24 24"><circle cx="13.5" cy="4" r="2"/><path d="M11 21l2-7 4 3 2 4M13 14l-4-3 1-4 4 2 3 1"/></svg>Les Mills</span>
+      <span class="mot"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.6-7-9.3A3.9 3.9 0 0 1 12 8a3.9 3.9 0 0 1 7 2.7C19 15.4 12 20 12 20z"/></svg>Kaada Oriental</span>
+      <span class="mot"><svg viewBox="0 0 24 24"><circle cx="6" cy="16" r="3.5"/><circle cx="18" cy="16" r="3.5"/><path d="M6 16l4-7h5l3 7M10 9l2 7M13 6h3"/></svg>Spinning RPM</span>
+      <span class="mot"><svg viewBox="0 0 24 24"><path d="M12 20c0-4 3-7 7-7 0 4-3 7-7 7zM12 20c0-4-3-7-7-7 0 4 3 7 7 7zM12 20c0-5 2-8 2-8s2 3 2 8"/></svg>Pilates Reformer</span>
+      <span class="mot"><svg viewBox="0 0 24 24"><path d="M12 3.5l2.5 5.4 5.8.8-4.2 4 1 5.8-5.1-2.9-5.1 2.9 1-5.8-4.2-4 5.8-.8z"/></svg>100 % femmes</span>
     </div>
     <div class="bandeau__lot">
       <span class="mot"><svg viewBox="0 0 24 24"><path d="M12 3.5l2.5 5.4 5.8.8-4.2 4 1 5.8-5.1-2.9-5.1 2.9 1-5.8-4.2-4 5.8-.8z"/></svg>Black Friday</span>
       <span class="mot"><svg viewBox="0 0 24 24"><circle cx="8.5" cy="7" r="3"/><circle cx="15.5" cy="7" r="3"/><path d="M3 20c0-3.5 2.5-6 5.5-6s5.5 2.5 5.5 6M10 20c0-3.5 2.5-6 5.5-6S21 16.5 21 20"/></svg>Offre Duo</span>
-      <span class="mot"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.6-7-9.3A3.9 3.9 0 0 1 12 8a3.9 3.9 0 0 1 7 2.7C19 15.4 12 20 12 20z"/></svg>100 % femmes</span>
-      <span class="mot"><svg viewBox="0 0 24 24"><path d="M3 9v6M6 7v10M18 7v10M21 9v6M6 12h12"/></svg>Coaching</span>
-      <span class="mot"><svg viewBox="0 0 24 24"><circle cx="13.5" cy="4" r="2"/><path d="M11 21l2-7 4 3 2 4M13 14l-4-3 1-4 4 2 3 1"/></svg>Cours collectifs</span>
-      <span class="mot"><svg viewBox="0 0 24 24"><path d="M12 20c0-4 3-7 7-7 0 4-3 7-7 7zM12 20c0-4-3-7-7-7 0 4 3 7 7 7zM12 20c0-5 2-8 2-8s2 3 2 8"/></svg>Yoga &amp; bien-être</span>
+      <span class="mot"><svg viewBox="0 0 24 24"><path d="M3 9v6M6 7v10M18 7v10M21 9v6M6 12h12"/></svg>Plateau musculation</span>
+      <span class="mot"><svg viewBox="0 0 24 24"><circle cx="13.5" cy="4" r="2"/><path d="M11 21l2-7 4 3 2 4M13 14l-4-3 1-4 4 2 3 1"/></svg>Les Mills</span>
+      <span class="mot"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.6-7-9.3A3.9 3.9 0 0 1 12 8a3.9 3.9 0 0 1 7 2.7C19 15.4 12 20 12 20z"/></svg>Kaada Oriental</span>
+      <span class="mot"><svg viewBox="0 0 24 24"><circle cx="6" cy="16" r="3.5"/><circle cx="18" cy="16" r="3.5"/><path d="M6 16l4-7h5l3 7M10 9l2 7M13 6h3"/></svg>Spinning RPM</span>
+      <span class="mot"><svg viewBox="0 0 24 24"><path d="M12 20c0-4 3-7 7-7 0 4-3 7-7 7zM12 20c0-4-3-7-7-7 0 4 3 7 7 7zM12 20c0-5 2-8 2-8s2 3 2 8"/></svg>Pilates Reformer</span>
+      <span class="mot"><svg viewBox="0 0 24 24"><path d="M12 3.5l2.5 5.4 5.8.8-4.2 4 1 5.8-5.1-2.9-5.1 2.9 1-5.8-4.2-4 5.8-.8z"/></svg>100 % femmes</span>
     </div>
   </div>
 </section>
@@ -450,7 +512,7 @@ body.pret .trame{opacity:1;}
 <section class="offre bloc" id="offre">
   <div class="wrap">
     <div class="offre__tete obs">
-      <p class="sur monte">L'offre Black Friday</p>
+      <p class="sur monte">Offre Duo · Black Friday novembre</p>
       <h2 class="titre t-l">
         <span class="ligne"><span style="--i:0">À deux,</span></span>
         <span class="ligne"><span class="mg" style="--i:1">c'est plus fort.</span></span>
@@ -458,12 +520,12 @@ body.pret .trame{opacity:1;}
     </div>
     <div class="offre__grille obs">
       <div class="carte-prix monte" style="--i:0">
-        <p class="carte-prix__etiq">Offre Duo · 2 personnes</p>
+        <p class="carte-prix__etiq">Black Friday · Novembre</p>
         <p class="carte-prix__montant">10 500<span>DH</span></p>
-        <p class="carte-prix__pour">Le duo · jusqu'au 30 novembre</p>
+        <p class="carte-prix__pour">Pour 2 personnes · places limitées</p>
         <a class="btn btn--xl magnet" href="#reserver" data-cta="offre">
           <span class="btn__t">
-            Je réserve mon duo
+            Réservez vos places limitées
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </span>
         </a>
@@ -471,17 +533,67 @@ body.pret .trame{opacity:1;}
       <ul class="inclus">
         <li class="monte" style="--i:1">
           <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8.5" cy="7" r="3"/><circle cx="15.5" cy="7" r="3"/><path d="M3 20c0-3.5 2.5-6 5.5-6s5.5 2.5 5.5 6M10 20c0-3.5 2.5-6 5.5-6S21 16.5 21 20"/></svg>
-          <div><h3>Offre Duo</h3><p>Une offre pensée pour 2 personnes : viens avec ta sœur, ta mère, ton amie ou ta collègue.</p></div>
+          <div><h3>2 personnes à 10 500 DH</h3><p>L'offre Duo est pensée pour 2 personnes : viens avec ta sœur, ta mère, ton amie ou ta collègue.</p></div>
         </li>
         <li class="monte" style="--i:2">
           <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="1.5"/><path d="M3 10h18M12 6v12M12 10c-1.5-3-5-3-5-1s3.5 1 5 1zM12 10c1.5-3 5-3 5-1s-3.5 1-5 1z"/></svg>
           <div><h3>Cartes cadeaux partenaires</h3><p>En plus de ton offre Duo : des cartes cadeaux chez nos partenaires d'une valeur de 1 000 DH.</p></div>
         </li>
         <li class="monte" style="--i:3">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>
-          <div><h3>Jusqu'au 30 novembre</h3><p>Offre Black Friday valable jusqu'au 30 novembre 2026, dans la limite des places disponibles.</p></div>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.2 4.6 5 .7-3.6 3.5.9 5-4.5-2.4-4.5 2.4.9-5L4.8 8.3l5-.7z"/></svg>
+          <div><h3>Places limitées</h3><p>Offre Black Friday du mois de novembre, dans la limite des places disponibles. Réserve vite les vôtres.</p></div>
         </li>
       </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LE CLUB : ESPACES & COURS ================= -->
+<section class="espaces bloc" id="club">
+  <div class="wrap">
+    <div class="espaces__tete obs">
+      <p class="sur monte">Le club · 3 000 m²</p>
+      <h2 class="titre t-l">
+        <span class="ligne"><span style="--i:0">Ce qui vous attend</span></span>
+        <span class="ligne"><span class="mg" style="--i:1">chez ELLE.</span></span>
+      </h2>
+    </div>
+    <div class="preuve__grande voile obs">
+      <img src="/img/1.jpg" alt="L'espace d'entraînement du club ELLE à Bouskoura" data-parallaxe loading="lazy" decoding="async" width="1280" height="720">
+    </div>
+    <div class="espaces__grille obs">
+      <figure class="espace monte" style="--i:0">
+        <div class="espace__img"><span class="espace__num">01</span><img src="/img/plateau-musculation.jpg" alt="Plateau musculation — ELLE Bouskoura" loading="lazy" decoding="async" style="object-position:center"></div>
+        <figcaption><h3>Plateau musculation</h3><p>Machines guidées, poids libres et cardio sur un grand plateau dédié.</p></figcaption>
+      </figure>
+      <figure class="espace monte" style="--i:1">
+        <div class="espace__img"><span class="espace__num">02</span><img src="/img/7.jpg" alt="Les vestiaires — ELLE Bouskoura" loading="lazy" decoding="async" style="object-position:center"></div>
+        <figcaption><h3>Les vestiaires</h3><p>Des vestiaires premium pensés pour ton confort, avant et après ta séance.</p></figcaption>
+      </figure>
+      <figure class="espace monte" style="--i:2">
+        <div class="espace__img"><span class="espace__num">03</span><img src="/img/les-mills.jpg" alt="Les Mills — ELLE Bouskoura" loading="lazy" decoding="async" style="object-position:center"></div>
+        <figcaption><h3>Les Mills</h3><p>BodyPump, BodyCombat, BodyAttack, RPM et BodyBalance : les cours Les Mills au club.</p></figcaption>
+      </figure>
+      <figure class="espace monte" style="--i:0">
+        <div class="espace__img"><span class="espace__num">04</span><img src="/img/kaada-oriental.jpg" alt="Kaada Oriental — ELLE Bouskoura" loading="lazy" decoding="async" style="object-position:center 70%"></div>
+        <figcaption><h3>Kaada Oriental</h3><p>Le cours Kaada Oriental, à découvrir au club.</p></figcaption>
+      </figure>
+      <figure class="espace monte" style="--i:1">
+        <div class="espace__img"><span class="espace__num">05</span><img src="/img/6.jpg" alt="Spinning RPM — ELLE Bouskoura" loading="lazy" decoding="async" style="object-position:center"></div>
+        <figcaption><h3>Spinning RPM</h3><p>Un studio de spinning immersif pour les séances RPM.</p></figcaption>
+      </figure>
+      <figure class="espace monte" style="--i:2">
+        <div class="espace__img"><span class="espace__num">06</span><img src="/img/5.jpg" alt="Pilates Reformer — ELLE Bouskoura" loading="lazy" decoding="async" style="object-position:center"></div>
+        <figcaption><h3>Pilates Reformer</h3><p>Un studio Pilates équipé de reformers.</p></figcaption>
+      </figure>
+    </div>
+    <div class="espaces__cta obs">
+      <a class="btn btn--xl magnet monte" href="#reserver" data-cta="espaces">
+        <span class="btn__t">
+          Réservez vos places limitées
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
     </div>
   </div>
 </section>
@@ -520,28 +632,29 @@ body.pret .trame{opacity:1;}
 <section class="reserver bloc" id="reserver">
   <div class="wrap reserver__in obs">
     <div>
-      <p class="sur monte">Black Friday · Offre Duo</p>
+      <p class="sur monte">Black Friday · Novembre</p>
       <h2 class="titre t-l">
-        <span class="ligne"><span style="--i:0">Réserve</span></span>
-        <span class="ligne"><span class="mg" style="--i:1">ton offre Duo</span></span>
+        <span class="ligne"><span style="--i:0">Réservez</span></span>
+        <span class="ligne"><span class="mg" style="--i:1">vos places</span></span>
       </h2>
       <p class="reserver__lead monte" style="--i:2">Laisse ton prénom et ton numéro. Notre équipe te contacte sur WhatsApp pour te présenter l'offre Duo Black Friday et réserver ta place.</p>
       <ul class="reserver__points monte" style="--i:3">
-        <li>Offre Duo : 10 500 DH pour 2 personnes</li>
+        <li>Offre Duo : 2 personnes à 10 500 DH</li>
+        <li>Club 100 % femmes · 3 000 m² · ouvert 7j/7</li>
+        <li>Centre commercial Bo Village, Bouskoura</li>
         <li>En plus : cartes cadeaux partenaires d'une valeur de 1 000 DH</li>
-        <li>Offre valable jusqu'au 30 novembre, selon disponibilités</li>
+        <li>Places limitées</li>
       </ul>
-      <ul class="decompte monte" style="--i:4" data-compte="blocs" aria-label="Temps restant avant la fin de l'offre">
-        <li><b data-u="j">--</b><small>Jours</small></li>
-        <li><b data-u="h">--</b><small>Heures</small></li>
-        <li><b data-u="m">--</b><small>Min</small></li>
-        <li><b data-u="s">--</b><small>Sec</small></li>
-      </ul>
+      <div class="reserver__actions monte" style="--i:4">
+        <a class="btn btn--tel" href="tel:+212709680532" data-tel="reserver">
+          <span class="btn__t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Appeler le 07 09 68 05 32</span>
+        </a>
+      </div>
     </div>
 
     <div class="form-panneau monte" id="form-panneau" style="--i:2">
       <form id="form-resa" novalidate>
-        <h3>Réserve ton offre Duo</h3>
+        <h3>Réservez vos places limitées</h3>
         <p>Entre ton prénom et ton WhatsApp. Notre équipe te présente l'offre et t'aide à réserver.</p>
 
         <div class="champ" data-champ="full_name">
@@ -560,7 +673,7 @@ body.pret .trame{opacity:1;}
         <div class="pot" aria-hidden="true"><label>Site web <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
 
         <button class="btn btn--xl" type="submit" id="btn-envoi">
-          <span class="btn__t"><span class="btn__lib">Je réserve mon offre Duo</span>
+          <span class="btn__t"><span class="btn__lib">Réservez vos places limitées</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </span>
         </button>
@@ -577,23 +690,6 @@ body.pret .trame{opacity:1;}
   </div>
 </section>
 
-<!-- ================= LE CLUB ================= -->
-<section class="preuve bloc" id="club">
-  <div class="wrap">
-    <div class="preuve__grande voile obs">
-      <img src="/img/1.jpg" alt="L'espace d'entraînement du club ELLE à Bouskoura" data-parallaxe loading="lazy" decoding="async" width="1280" height="720">
-    </div>
-    <div class="galerie obs">
-      <figure class="monte" style="--i:0"><img src="/img/2.jpg" alt="Équipements de musculation et de cardio" loading="lazy" decoding="async" width="1080" height="1350"><figcaption>Équipements</figcaption></figure>
-      <figure class="monte" style="--i:1"><img src="/img/3.jpg" alt="Salle dédiée aux cours collectifs" loading="lazy" decoding="async" width="1080" height="1350"><figcaption>Cours collectifs</figcaption></figure>
-      <figure class="monte" style="--i:2"><img src="/img/4.jpg" alt="Espace de fitness et poids libres" loading="lazy" decoding="async" width="1080" height="1350"><figcaption>Fitness</figcaption></figure>
-      <figure class="monte" style="--i:0"><img src="/img/5.jpg" alt="Studio Pilates avec reformers" loading="lazy" decoding="async" width="1080" height="1350"><figcaption>Pilates</figcaption></figure>
-      <figure class="monte" style="--i:1"><img src="/img/6.jpg" alt="Studio de spinning immersif" loading="lazy" decoding="async" width="1080" height="1350"><figcaption>Spinning</figcaption></figure>
-      <figure class="monte" style="--i:2"><img src="/img/7.jpg" alt="Vestiaires premium du club" loading="lazy" decoding="async" width="1080" height="1350"><figcaption>Vestiaires luxe</figcaption></figure>
-    </div>
-  </div>
-</section>
-
 <!-- ================= FINAL ================= -->
 <section class="final bloc" id="final">
   <div class="wrap final__in obs">
@@ -602,25 +698,26 @@ body.pret .trame{opacity:1;}
       <span class="ligne"><span style="--i:0">Cette année,</span></span>
       <span class="ligne"><span class="mg" style="--i:1">on s'entraîne à deux.</span></span>
     </h2>
-    <p class="lead monte" style="--i:2">Jusqu'au 30 novembre, profite de l'offre Duo à 10 500 DH pour 2 personnes et des cartes cadeaux partenaires d'une valeur de 1 000 DH.</p>
+    <p class="lead monte" style="--i:2">En novembre, profitez de l'offre Duo Black Friday : 2 personnes à 10 500 DH, dans un club 100 % femmes de 3 000 m² ouvert 7j/7. Places limitées.</p>
     <a class="btn btn--xl btn--clair magnet monte" style="--i:3" href="#reserver" data-cta="final">
       <span class="btn__t">
-        Je réserve mon offre Duo
+        Réservez vos places limitées
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </span>
     </a>
     <div class="final__infos monte" style="--i:4">
       <div>
         <h4>Adresse</h4>
-        <p>Bo Village Bouskoura, Bouskoura</p>
+        <p>Centre commercial Bo Village, Bouskoura</p>
         <a href="https://maps.app.goo.gl/1frR2MekYpTx551CA" target="_blank" rel="noopener">Voir sur Google Maps →</a>
       </div>
       <div>
         <h4>Horaires</h4>
-        <p>Lun – Ven : 7h – 22h · Sam : 9h – 20h · Dim : 9h – 14h</p>
+        <p>Ouvert 7j/7<br>Lun – Ven : 7h – 22h · Sam : 9h – 20h · Dim : 9h – 14h</p>
       </div>
       <div>
         <h4>Contact</h4>
+        <a href="tel:+212709680532" data-tel="pied">Téléphone : 07 09 68 05 32</a>
         <a id="lien-wa-pied" href="#" target="_blank" rel="noopener" data-wa="pied">WhatsApp : nous écrire →</a>
         <p style="margin-top:8px">Réponse pendant les horaires d'ouverture.</p>
       </div>
@@ -639,7 +736,7 @@ body.pret .trame{opacity:1;}
 
 <div class="colle-cta" id="colle-cta">
   <a class="btn" href="#form-panneau" data-cta="sticky" id="cta-sticky">
-    <span class="btn__t">Je réserve mon offre Duo</span>
+    <span class="btn__t">Réservez vos places limitées</span>
   </a>
 </div>
 
@@ -699,26 +796,10 @@ body.pret .trame{opacity:1;}
   pixel('ViewContent',{content_name:C.offre||'Offre Duo',value:10500,currency:'MAD'});
   stat('page_view',{referrer:(document.referrer||'').slice(0,200)});
 
-  /* ---------- Compte à rebours ---------- */
-  (function(){
-    var fin=Date.parse(C.finOffre||'2026-11-30T23:59:59+00:00');
-    var pastille=document.querySelector('[data-compte="pastille"]');
-    var blocs=document.querySelector('[data-compte="blocs"]');
-    var deux=function(n){return (n<10?'0':'')+n;};
-    function maj(){
-      var r=fin-Date.now();
-      if(!(r>0)){
-        if(pastille) pastille.textContent="Offre Black Friday terminée";
-        if(blocs) blocs.classList.add('fini');
-        return false;
-      }
-      var j=Math.floor(r/864e5), h=Math.floor(r%864e5/36e5), m=Math.floor(r%36e5/6e4), s=Math.floor(r%6e4/1e3);
-      if(pastille) pastille.textContent="Fin de l'offre dans "+j+" j "+deux(h)+" h "+deux(m)+" min";
-      if(blocs){ var v={j:deux(j),h:deux(h),m:deux(m),s:deux(s)}; blocs.querySelectorAll('[data-u]').forEach(function(b){ b.textContent=v[b.getAttribute('data-u')]; }); }
-      return true;
-    }
-    if(maj()){ var it=setInterval(function(){ if(!maj()) clearInterval(it); },1000); }
-  })();
+  /* ---------- Clics sur le numéro de téléphone ---------- */
+  Array.prototype.forEach.call(document.querySelectorAll('a[data-tel]'),function(a){
+    a.addEventListener('click',function(){ pixel('Contact',{content_name:'Appel '+a.getAttribute('data-tel')}); stat('cta_click',{cta:'tel_'+a.getAttribute('data-tel')}); });
+  });
 
   /* ---------- Téléphone marocain ---------- */
   function normaliserTel(brut){
@@ -771,7 +852,7 @@ body.pret .trame{opacity:1;}
     return 'https://wa.me/'+C.whatsappNumber+'?text='+encodeURIComponent(msg);
   }
 
-  function etatChargement(on){ enCours=on; btnEnvoi.disabled=on; libEnvoi.textContent=on?'Envoi en cours…':'Je réserve mon offre Duo'; }
+  function etatChargement(on){ enCours=on; btnEnvoi.disabled=on; libEnvoi.textContent=on?'Envoi en cours…':'Réservez vos places limitées'; }
 
   function versMerci(l){
     try{ sessionStorage.setItem('elle_lead_confirm',JSON.stringify({full_name:l.full_name,phone:l.phone,event_id:l.event_id})); }catch(e){}

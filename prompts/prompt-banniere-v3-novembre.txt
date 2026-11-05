@@ -1,0 +1,49 @@
+PROMPT CHATGPT — BANNIÈRE BLACK FRIDAY V3 (modifs client)
+Joindre 4 images, dans cet ordre :
+  Image 1 = la bannière actuelle (Black Friday / Offre Duo 10 500 DH)
+  Image 2 = la photo « plateau musculation » (salle avec machines + tapis)
+  Image 3 = le visuel « Les Mills »
+  Image 4 = la photo « Kaada Oriental » (plateformes dorées)
+Fichier final : 1920 × 1080 px, à enregistrer sous  site/img/cover-black-friday.jpg
+
+-------------------------------------------------------------------------------
+
+Modifie l'IMAGE 1 (bannière Black Friday du club ELLE Bouskoura). Garde exactement le même style : ciel de nuit, façade « UNIQUE ELLE – YOUR FITNESS CLUB », drapeau « ELLE », reflets magenta #FF00B9, police condensée en capitales type Bebas Neue, format paysage 16:9.
+
+1) BLOC DE TITRE (à gauche, en haut) — nouvelle hiérarchie :
+   Ligne 1 (petite, blanche) :      « OFFRE DUO BLACK FRIDAY »
+   Ligne 2 (TRÈS GRANDE, magenta) : « NOVEMBRE »  → c'est le mot le plus grand de toute l'image
+   Ligne 3 (moyenne) :              « 2 PERSONNES À 10 500 DH »  → « 2 PERSONNES À » en blanc, « 10 500 DH » en magenta
+   Garde au-dessus le petit surtitre « LE CLUB 100 % FEMMES À BOUSKOURA ».
+
+2) SOUS LE TITRE — remplace les 3 colonnes actuelles par ces 4 infos (icônes fines magenta + séparateurs verticaux, texte blanc) :
+   - icône silhouette féminine : « Club 100 % femmes »
+   - icône surface / plan :      « 3 000 m² »
+   - icône calendrier :          « 7j/7 »
+   - icône repère de lieu :      « Bo Village Bouskoura »
+
+3) PASTILLE (contour magenta, à la place de « Offre spéciale jusqu'au 30 novembre ») :
+   « RÉSERVEZ VOS PLACES LIMITÉES »
+   Aucune date nulle part dans l'image.
+
+4) BANDEAU DE PHOTOS DU BAS — remplace les 5 photos actuelles par 6 panneaux, même style (séparateurs obliques magenta, bandeau noir de légendes avec icônes fines magenta), dans cet ordre de gauche à droite :
+   1. « PLATEAU MUSCULATION » → utilise l'IMAGE 2
+   2. « VESTIAIRES »          → garde la photo des vestiaires de l'image 1
+   3. « LES MILLS »           → utilise l'IMAGE 3 : prends UNE seule athlète (celle du BODYPUMP avec la barre), sans aucun texte du visuel d'origine
+   4. « KAADA ORIENTAL »      → utilise l'IMAGE 4 (pieds sur les plateformes dorées)
+   5. « SPINNING RPM »        → garde la photo cycling de l'image 1
+   6. « PILATES REFORMER »    → garde la photo pilates de l'image 1
+   Retouche les photos 2 et 4 pour qu'elles collent à l'ambiance nuit : plus sombres, contrastées, lumières magenta. Garde le doré des plateformes Kaada.
+
+FORMAT
+- 16:9, 1920 × 1080 px. Rien ne doit être coupé sur les bords.
+
+TEXTE — RÈGLES STRICTES
+- Recopie EXACTEMENT : « OFFRE DUO BLACK FRIDAY », « NOVEMBRE », « 2 PERSONNES À 10 500 DH », « Club 100 % femmes », « 3 000 m² », « 7j/7 », « Bo Village Bouskoura », « RÉSERVEZ VOS PLACES LIMITÉES », « PLATEAU MUSCULATION », « VESTIAIRES », « LES MILLS », « KAADA ORIENTAL », « SPINNING RPM », « PILATES REFORMER ».
+- « 10 500 » avec une espace entre 10 et 500. Accents corrects (À, É).
+- Supprime tout le reste : plus de « Offre Duo pour 2 personnes / le duo », plus de « Cartes cadeaux », plus de « 30 novembre », plus de « COURS COLLECTIFS » ni « ÉQUIPEMENTS ».
+- Aucune lettre déformée, aucun mot inventé, aucun texte en plus.
+
+-------------------------------------------------------------------------------
+SI UN MOT RESSORT FAUX : « Corrige uniquement le texte "XXX" en "YYY". Ne modifie rien d'autre. »
+SI LES 6 PHOTOS DU BAS SORTENT MAL : demande d'abord le bandeau du bas seul, puis le titre dans un 2e temps.
