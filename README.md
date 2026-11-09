@@ -97,5 +97,4 @@ Si l'envoi échoue : les infos sont gardées et la visiteuse peut réessayer ou 
 
 ## À valider avec le client avant la mise en ligne
 - La durée de l'offre Duo (10 500 DH = combien de mois / 1 an ?) — à ajouter dans les textes si besoin.
-- Les conditions des cartes cadeaux partenaires (1 000 DH par personne ou pour le duo ?).
 - Le texte de la politique de confidentialité.

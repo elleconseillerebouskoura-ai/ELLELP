@@ -7,7 +7,7 @@ window.ELLE_CONFIG = {
 
   /* 1) URL du Web App Google Apps Script (Déployer > Nouveau déploiement)
         Elle se termine par /exec — à coller entre les guillemets.          */
-  appsScriptUrl: "",
+  appsScriptUrl: "https://script.google.com/macros/s/AKfycbwR3cVsfdh8BzaYSZ46J3vjS9Z7oTxx68yBC-RW_AfcywSXWi0mcHcpo3tBkQauzQSm/exec",
 
   /* 2) Numéro WhatsApp du club (format international, sans + ni espaces) */
   whatsappNumber: "212709680532",
