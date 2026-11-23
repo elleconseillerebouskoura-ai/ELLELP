@@ -49,6 +49,7 @@ function doPost(e) {
     switch (body.action) {
       case 'lead':   return json_(saveLead_(body));
       case 'event':  return json_(saveEvent_(body));
+      case 'events': return json_(saveEvents_(body));
       case 'admin':  return json_(adminData_(body));
       case 'update': return json_(updateLead_(body));
       default:       return json_({ ok: false, error: 'Action inconnue' });
@@ -134,6 +135,35 @@ function saveEvent_(b) {
     lock.releaseLock();
   }
   return { ok: true };
+}
+
+// Lot d'événements envoyé en une seule requête (économie de quota)
+function saveEvents_(b) {
+  const items = Array.isArray(b.items) ? b.items.slice(0, 30) : [];
+  const ok = items.filter(it => EVENT_TYPES.indexOf(String(it.type || '')) !== -1);
+  if (!ok.length) return { ok: true, n: 0 };
+  const lock = LockService.getScriptLock();
+  lock.waitLock(10000);
+  try {
+    const sh = sheet_(SHEET_EVENTS, EVENT_HEADERS);
+    const now = new Date();
+    const rows = ok.map(it => [
+      now.toISOString(),
+      Utilities.formatDate(now, TIMEZONE, 'yyyy-MM-dd'),
+      String(it.type),
+      safe_(clean_(it.cta, 30)),
+      clean_(it.visitor_id, 60),
+      clean_(it.session_id, 60),
+      safe_(clean_(it.utm_source, 100)),
+      safe_(clean_(it.utm_campaign, 150)),
+      safe_(clean_(it.page, 80)),
+      safe_(clean_(it.referrer, 200))
+    ]);
+    sh.getRange(sh.getLastRow() + 1, 1, rows.length, EVENT_HEADERS.length).setValues(rows);
+  } finally {
+    lock.releaseLock();
+  }
+  return { ok: true, n: ok.length };
 }
 
 function appendEvent_(type, cta, b) {
