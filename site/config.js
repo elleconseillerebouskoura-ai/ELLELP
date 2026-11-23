@@ -1,5 +1,5 @@
 /* =========================================================================
-   ELLE Bouskoura — Black Friday 2026
+   ELLE Bouskoura — Pink Friday 2026
    CONFIGURATION UNIQUE — c'est le SEUL fichier à modifier pour brancher
    le formulaire, le pixel et WhatsApp. Utilisé par index, merci et admin.
    ========================================================================= */
@@ -19,9 +19,9 @@ window.ELLE_CONFIG = {
   gaMeasurementId: "",
 
   /* Campagne */
-  source:   "landing-black-friday-elle-bouskoura",
-  campaign: "Black Friday 2026",
-  offre:    "Offre Duo 10 500 DH",
+  source:   "landing-pink-friday-elle-bouskoura",
+  campaign: "Pink Friday 2026",
+  offre:    "Pink Friday",
 
   /* Fin de l'offre — sert au compte à rebours (heure du Maroc) */
   finOffre: "2026-11-30T23:59:59+00:00"

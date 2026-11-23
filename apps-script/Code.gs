@@ -1,5 +1,5 @@
 /* =============================================================================
-   ELLE Bouskoura — Black Friday 2026
+   ELLE Bouskoura — Pink Friday 2026
    Backend Google Apps Script (lié au Google Sheet)
 
    Rôle :
@@ -35,7 +35,7 @@ const EVENT_HEADERS = ['Horodatage', 'Jour', 'Type', 'CTA', 'Visitor ID', 'Sessi
 
 /* --------------------------- POINTS D'ENTRÉE ------------------------------ */
 function doGet() {
-  return json_({ ok: true, service: 'ELLE Bouskoura — Black Friday', time: new Date().toISOString() });
+  return json_({ ok: true, service: 'ELLE Bouskoura — Pink Friday', time: new Date().toISOString() });
 }
 
 function doPost(e) {
@@ -111,8 +111,8 @@ function saveLead_(b) {
     if (NOTIFY_EMAIL) {
       try {
         MailApp.sendEmail(NOTIFY_EMAIL,
-          'Nouveau lead Black Friday — ' + nom,
-          'Nom : ' + nom + '\nTéléphone : ' + tel + '\nSource : ' + (b.utm_source || 'direct') +
+          'Nouveau lead Pink Friday — ' + nom,
+          'Nom : ' + nom + '\nTéléphone : ' + tel + '\nOffre : ' + (b.offre || '') + '\nSource : ' + (b.utm_source || 'direct') +
           (doublon ? '\n⚠️ Ce numéro existe déjà dans la liste.' : '') +
           '\n\nWhatsApp : https://wa.me/' + tel.replace('+', ''));
       } catch (mailErr) { console.warn(mailErr); }
@@ -310,12 +310,12 @@ function installer() {
   shL.setColumnWidth(1, 130); shL.setColumnWidth(2, 150); shL.setColumnWidth(3, 190); shL.setColumnWidth(4, 140);
   const def = ss_().getSheetByName('Feuille 1') || ss_().getSheetByName('Sheet1');
   if (def && def.getLastRow() === 0 && ss_().getSheets().length > 2) ss_().deleteSheet(def);
-  try { ss_().toast('Onglets Leads et Evenements prêts ✔', 'ELLE Black Friday'); } catch (e) {}
+  try { ss_().toast('Onglets Leads et Evenements prêts ✔', 'ELLE Pink Friday'); } catch (e) {}
   console.log('Onglets Leads et Evenements prêts');
 }
 
 /* Test rapide depuis l'éditeur : ajoute un faux lead */
 function testLead() {
-  const r = saveLead_({ full_name: 'Test ELLE', phone: '0612345678', offre: 'Offre Duo 10 500 DH', source: 'test', campaign: 'Black Friday 2026', utm_source: 'test' });
+  const r = saveLead_({ full_name: 'Test ELLE', phone: '0612345678', offre: 'Pink Friday — Duo', source: 'test', campaign: 'Pink Friday 2026', utm_source: 'test' });
   console.log(r);
 }
